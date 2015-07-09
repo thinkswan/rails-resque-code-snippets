@@ -7,12 +7,17 @@
 
 <p>
   <strong>Language:</strong>
-  <%= @snippet.language %>
+  <%= @snippet.language.humanize %>
 </p>
 
 <p>
-  <strong>Plain Code:</strong>
-  <%= @snippet.plain_code %>
+  <strong>Code:</strong>
+
+  <% if @snippet.highlighted_code.present? %>
+    <%= raw @snippet.highlighted_code %>
+  <% else %>
+    <pre><%= @snippet.plain_code %></pre>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_snippet_path(@snippet) %> |
