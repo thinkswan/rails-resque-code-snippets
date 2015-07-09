@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :snippets
 
+  mount Resque::Server.new, at: '/resque'
+
   root to: 'snippets#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
