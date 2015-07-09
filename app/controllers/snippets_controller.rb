@@ -28,9 +28,7 @@ class SnippetsController < ApplicationController
 
     respond_to do |format|
       if @snippet.save
-        uri = URI.parse('http://markup.su/api/highlighter')
-        request = Net::HTTP.post_form(uri, { language: @snippet.language.humanize, source: @snippet.plain_code, theme: 'Dawn' })
-        @snippet.update_attribute(:highlighted_code, request.body)
+        Resque.enqueue(SnippetHighlighter, @snippet.id)
 
         format.html { redirect_to @snippet, notice: 'Snippet was successfully created.' }
         format.json { render :show, status: :created, location: @snippet }
