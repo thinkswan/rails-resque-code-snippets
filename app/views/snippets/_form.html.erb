@@ -20,8 +20,8 @@
     <%= f.select :language, Snippet.languages.keys.map { |k| [k.humanize, k] } %>
   </div>
   <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_area :content %>
+    <%= f.label :plain_code %><br>
+    <%= f.text_area :plain_code %>
   </div>
   <div class="actions">
     <%= f.submit %>

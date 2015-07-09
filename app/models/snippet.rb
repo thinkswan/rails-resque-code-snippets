@@ -3,5 +3,6 @@ class Snippet < ActiveRecord::Base
 
   validates :title, presence: true
   validates :language, presence: true
-  validates :content, presence: true
+  validates :plain_code, presence: true
+  validates :highlighted_code, absence: true
 end

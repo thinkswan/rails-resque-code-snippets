@@ -1,1 +1,1 @@
-json.extract! @snippet, :id, :title, :language, :content, :created_at, :updated_at
+json.extract! @snippet, :id, :title, :language, :plain_code, :created_at, :updated_at

@@ -3,9 +3,9 @@
 one:
   title: MyString
   language: 1
-  content: MyText
+  plain_code: MyText
 
 two:
   title: MyString
   language: 1
-  content: MyText
+  plain_code: MyText
