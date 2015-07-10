@@ -12,16 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
     <%= f.label :language %><br>
     <%= f.select :language, Snippet.languages.keys.map { |k| [k.humanize, k] } %>
   </div>
   <div class="field">
     <%= f.label :plain_code %><br>
-    <%= f.text_area :plain_code %>
+    <%= f.text_area :plain_code, rows: 20, cols: 80 %>
   </div>
   <div class="actions">
     <%= f.submit %>

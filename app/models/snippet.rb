@@ -1,7 +1,6 @@
 class Snippet < ActiveRecord::Base
-  enum language: [ :ruby, :javascript ]
+  enum language: [ :ruby, :python, :javascript ]
 
-  validates :title, presence: true
   validates :language, presence: true
   validates :plain_code, presence: true
 end

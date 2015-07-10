@@ -18,7 +18,7 @@ class SnippetsControllerTest < ActionController::TestCase
 
   test "should create snippet" do
     assert_difference('Snippet.count') do
-      post :create, snippet: { plain_code: @snippet.plain_code, language: @snippet.language, title: @snippet.title }
+      post :create, snippet: { plain_code: @snippet.plain_code, language: @snippet.language }
     end
 
     assert_redirected_to snippet_path(assigns(:snippet))
@@ -35,7 +35,7 @@ class SnippetsControllerTest < ActionController::TestCase
   end
 
   test "should update snippet" do
-    patch :update, id: @snippet, snippet: { plain_code: @snippet.plain_code, language: @snippet.language, title: @snippet.title }
+    patch :update, id: @snippet, snippet: { plain_code: @snippet.plain_code, language: @snippet.language }
     assert_redirected_to snippet_path(assigns(:snippet))
   end
 

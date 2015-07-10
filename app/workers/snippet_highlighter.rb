@@ -3,6 +3,7 @@ class SnippetHighlighter
 
   API_LANGUAGES = {
     ruby: 'Ruby',
+    python: 'Python',
     javascript: 'JavaScript'
   }.freeze
 

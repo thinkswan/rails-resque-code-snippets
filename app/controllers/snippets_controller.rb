@@ -75,7 +75,7 @@ class SnippetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def snippet_params
-      params.require(:snippet).permit(:title, :language, :plain_code)
+      params.require(:snippet).permit(:language, :plain_code)
     end
 
     def enqueue_snippet_highlighter

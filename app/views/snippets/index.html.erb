@@ -5,7 +5,6 @@
 <table>
   <thead>
     <tr>
-      <th>Title</th>
       <th>Language</th>
       <th>Code</th>
       <th colspan="3"></th>
@@ -15,7 +14,6 @@
   <tbody>
     <% @snippets.each do |snippet| %>
       <tr>
-        <td valign="top"><%= snippet.title %></td>
         <td valign="top"><%= snippet.language.humanize %></td>
         <td>
           <% if snippet.highlighted_code.present? %>
