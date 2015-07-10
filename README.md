@@ -43,7 +43,7 @@ TERM_CHILD=1 COUNT=2 QUEUE=* bin/rake resque:workers
 This will start a server at http://localhost:3000.
 
 To monitor the Resque workers, open http://localhost:3000/resque in a separate
-tab. (User Name: `<leave blank>`, Password: `password`)
+tab.
 
 ![Resque web admin](https://cloud.githubusercontent.com/assets/338259/8615398/6860eea0-271c-11e5-868e-d5d8d44c4127.jpg)
 
@@ -63,7 +63,7 @@ not been picked off the queue yet.
 
 ![Code snippet (no syntax highlighting)](https://cloud.githubusercontent.com/assets/338259/8615397/68118d4c-271c-11e5-8845-a97b7f3e917d.jpg)
 
-Once the Resque worker finishes the job, you can refresh the page to see the
+Once a worker finishes the job, you can refresh the page to see the
 syntax highlighted version of the snippet.
 
 ![Code snippet (with syntax highlighting)](https://cloud.githubusercontent.com/assets/338259/8615399/68648434-271c-11e5-904b-97bb1c315ed0.jpg)
