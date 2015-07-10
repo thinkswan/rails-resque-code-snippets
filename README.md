@@ -37,7 +37,7 @@ bin/rake db:setup
 
 ```
 bin/rails server
-TERM_CHILD=1 QUEUE=* bin/rake resque:work
+TERM_CHILD=1 COUNT=2 QUEUE=* bin/rake resque:workers
 ```
 
 This will start a server at http://localhost:3000.
