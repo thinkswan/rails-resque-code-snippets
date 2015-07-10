@@ -14,7 +14,7 @@
   <tbody>
     <% @snippets.each do |snippet| %>
       <tr>
-        <td valign="top"><%= snippet.language.humanize %></td>
+        <td valign="top"><%= formatted_language snippet %></td>
         <td>
           <% if snippet.highlighted_code.present? %>
             <%= raw snippet.highlighted_code %>

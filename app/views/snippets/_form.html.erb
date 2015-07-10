@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :language %><br>
-    <%= f.select :language, Snippet.languages.keys.map { |k| [k.humanize, k] } %>
+    <%= f.select :language, Snippet.languages.keys.map { |k| [Snippet::API_LANGUAGES[k.to_sym], k] } %>
   </div>
   <div class="field">
     <%= f.label :plain_code %><br>
