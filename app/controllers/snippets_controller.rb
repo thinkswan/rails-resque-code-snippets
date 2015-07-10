@@ -28,7 +28,7 @@ class SnippetsController < ApplicationController
 
     respond_to do |format|
       if @snippet.save
-        Resque.enqueue(SnippetHighlighter, @snippet.id)
+        enqueue_snippet_highlighter
 
         format.html { redirect_to @snippet, notice: 'Snippet was successfully created.' }
         format.json { render :show, status: :created, location: @snippet }
@@ -46,7 +46,7 @@ class SnippetsController < ApplicationController
       if @snippet.update(snippet_params)
         @snippet.update_attribute(:highlighted_code, nil)
 
-        Resque.enqueue(SnippetHighlighter, @snippet.id)
+        enqueue_snippet_highlighter
 
         format.html { redirect_to @snippet, notice: 'Snippet was successfully updated.' }
         format.json { render :show, status: :ok, location: @snippet }
@@ -76,5 +76,9 @@ class SnippetsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def snippet_params
       params.require(:snippet).permit(:title, :language, :plain_code)
+    end
+
+    def enqueue_snippet_highlighter
+      Resque.enqueue(SnippetHighlighter, @snippet.id)
     end
 end
