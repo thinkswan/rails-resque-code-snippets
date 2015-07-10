@@ -54,7 +54,7 @@ snippets. It is backed by an SQLite3 database.
 
 When you create or modify a snippet, a Resque worker (`SnippetHighlighter`) is
 enqueued. This worker sends the code snippet and specified language to a [public
-syntax highlighting API](http://markup.su/api/highlighter) and saves the result
+syntax highlighting API](http://markup.su/highlighter/api) and saves the result
 when finished.
 
 Note that when you first create or modify a snippet, you will see the plain
@@ -64,7 +64,7 @@ not been picked off the queue yet.
 ![Code snippet (no syntax highlighting)](https://cloud.githubusercontent.com/assets/338259/8615397/68118d4c-271c-11e5-8845-a97b7f3e917d.jpg)
 
 Once the Resque worker finishes the job, you can refresh the page to see the
-fancy syntax highlighted version of the snippet.
+syntax highlighted version of the snippet.
 
 ![Code snippet (with syntax highlighting)](https://cloud.githubusercontent.com/assets/338259/8615399/68648434-271c-11e5-904b-97bb1c315ed0.jpg)
 
