@@ -26,9 +26,10 @@ If you prefer to install from source:
 
 * http://redis.io/download#installation
 
-#### Install gems and set project up
+#### Install gems and set database up
 
 ```
+gem install foreman
 bundle install
 bin/rake db:setup
 ```
@@ -36,8 +37,7 @@ bin/rake db:setup
 #### Start server and Resque workers
 
 ```
-bin/rails server
-TERM_CHILD=1 COUNT=2 QUEUE=* bin/rake resque:workers
+foreman start
 ```
 
 This will start a server at http://localhost:3000.
